@@ -34,4 +34,5 @@ public interface OrderMapper {
 
     @Delete("delete from `order` where order_id=#{orderId}")
     public int deleteOrderById(Long orderId);
+
 }
