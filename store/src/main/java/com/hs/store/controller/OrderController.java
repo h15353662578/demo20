@@ -2,10 +2,7 @@ package com.hs.store.controller;
 
 import com.hs.store.module.pojo.Order;
 import com.hs.store.module.pojo.OrderUser;
-import com.hs.store.module.pojo.User;
 import com.hs.store.service.OrderService;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,5 +44,17 @@ public class OrderController {
     @DeleteMapping("/deleteOrderById")
     public int deleteOrderById(Long orderId){
         return orderService.deleteOrderById(orderId);
+    }
+
+    @ApiOperation("/添加订单")
+    @PutMapping("/addOrder")
+    public int addOrder(@RequestBody Order order){
+        return orderService.addOrder(order);
+    }
+
+    @ApiOperation("/修改订单")
+    @PostMapping("/saveOrder")
+    public int save(@RequestBody  Order order){
+        return orderService.save(order);
     }
 }

@@ -3,9 +3,7 @@ package com.hs.store.mapper;
 import com.hs.store.module.pojo.Order;
 import com.hs.store.module.pojo.OrderUser;
 import com.hs.store.module.pojo.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -35,4 +33,9 @@ public interface OrderMapper {
     @Delete("delete from `order` where order_id=#{orderId}")
     public int deleteOrderById(Long orderId);
 
+    @Insert("insert into `order` (order_id, order_store_name, order_store_price, order_store_math, order_store_tot, order_status, order_user_address) values (#{orderId}, #{orderStoreName}, #{orderStorePrice}, #{orderStoreMath}, #{orderStoreTot}, #{orderStatus}, #{orderUserAddress})")
+    public int addOrder(Order order);
+
+    @Update("update `order` SET order_id = #{orderId}, order_store_name = #{orderStoreName}, order_store_price = #{orderStorePrice}, order_store_math = #{orderStoreMath},order_store_tot = #{orderStoreTot}, order_status = #{orderStatus}, order_user_address = #{orderUserAddress} where order_id = #{orderId};")
+    public int save(Order order);
 }

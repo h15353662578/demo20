@@ -1,10 +1,8 @@
 package com.hs.store.mapper;
 
 import com.hs.store.module.pojo.Store;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -41,4 +39,7 @@ public interface StoreMapper {
 
     @Delete("delete store from store where id=#{id}")
     public int deleteStoreById(Long id);
+
+    @Update("update store SET id = #{id},com_name = #{comName}, com_price = #{comPrice}, com_brand = #{comBrand},com_class = #{comClass}, com_status = #{comStatus} where id = #{id}")
+    public int saveStore(@RequestBody Store store);
 }

@@ -34,7 +34,7 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    @Insert("insert into user (id,name, user_name, password, user_sex, user_age,user_phone, order_id) values (#{id},#{name},#{userName},#{password},#{userSex},#{userAge},#{userPhone},#{orderId})")
+    @Insert("insert into user (name, user_name, password, user_sex, user_age,user_phone, order_id) values (#{name},#{userName},#{password},#{userSex},#{userAge},#{userPhone},#{orderId})")
     public int addUser(User user);
 
     /***
@@ -58,9 +58,7 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    @Update("update user SET id = # {id}, name = #{name}, user_phone = #{userPhone}, user_name = #{userName},\n" +
-            "\t\tpassword = #{password}, user_sex = #{userSex}, order_id = #{userId}, user_age = #{userAge}\n" +
-            "\t\twhere id = #{id}")
+    @Update("update user SET  name = #{name}, user_phone = #{userPhone}, user_name = #{userName},password = #{password}, user_sex = #{userSex},  user_age = #{userAge} where id = #{id}")
     public int save(User user);
 
     @Delete("delete user from user where id=#{id}")

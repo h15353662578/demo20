@@ -36,31 +36,31 @@ public class UserController {
 
     @ApiOperation("/添加用户")
     @PutMapping("/addUser")
-    public int addUser(User user) {
+    public int addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 
     @ApiOperation("/根据账号删除用户")
     @DeleteMapping("/deleteUserByName")
-    public int deleteUserByName(String userName) {
+    public int deleteUserByName(@RequestBody String userName) {
         return userService.deleteUserByName(userName);
     }
 
     @ApiOperation("/根据账号查询用户")
     @GetMapping("/findByName")
-    public List<User> findByName(String userName) {
+    public List<User> findByName(@RequestBody String userName) {
         return userService.findByName(userName);
     }
 
     @ApiOperation("/更新用户")
-    @PutMapping("/save")
-    public int save(User user) {
+    @PostMapping("/save")
+    public int save(@RequestBody User user) {
         return userService.save(user);
     }
 
     @ApiOperation("/根据id删除用户")
     @DeleteMapping("/deleteUserById")
-    public int deleteUserById(Long id) {
+    public int deleteUserById( Long id) {
         return userService.deleteUserById(id);
     }
 }

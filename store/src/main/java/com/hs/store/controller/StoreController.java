@@ -28,19 +28,25 @@ public class StoreController {
 
     @ApiOperation("/新增商品")
     @PutMapping("/addStore")
-    public int addStore(Store store){
+    public int addStore(@RequestBody Store store){
         return storeService.addStore(store);
     }
 
     @ApiOperation("/模糊查询商品首字母")
     @GetMapping("/likeStoreName")
-    public List<Store> likeStoreName(String comName){
+    public List<Store> likeStoreName(@RequestBody String comName){
         return storeService.likeStoreName(comName);
     }
 
     @ApiOperation("/根据id删除")
-    @DeleteMapping("/deleteUserById")
-    public int deleteUserById(Long id){
-        return storeService.deleteUserById(id);
+    @DeleteMapping("/deleteStoreById")
+    public int deleteStoreById(Long id){
+        return storeService.deleteStoreById(id);
+    }
+
+    @ApiOperation("/修改商品")
+    @PostMapping("/saveStore")
+    public int saveStore(@RequestBody Store store){
+        return storeService.saveStore(store);
     }
 }

@@ -34,7 +34,7 @@ public class OrderUserController {
 
     @ApiOperation("/添加订单用户信息")
     @PutMapping("/addOrderUser")
-    public int addOrderUser(OrderUser orderUser){
+    public int addOrderUser(@RequestBody OrderUser orderUser){
         return orderUserService.addOrderUser(orderUser);
     }
 }

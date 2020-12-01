@@ -1,6 +1,7 @@
 package com.hs.store.service.impl;
 
 import com.hs.store.mapper.OrderUserMapper;
+import com.hs.store.module.pojo.Order;
 import com.hs.store.module.pojo.OrderUser;
 import com.hs.store.service.OrderUserService;
 import org.springframework.stereotype.Service;
@@ -32,4 +33,6 @@ public class OrderUserServiceImpl implements OrderUserService {
     public int addOrderUser(OrderUser orderUser){
         return orderUserMapper.addOrderUser(orderUser);
     }
+
+
 }

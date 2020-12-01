@@ -35,7 +35,12 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public int deleteUserById(Long id){
+    public int deleteStoreById(Long id){
         return storeMapper.deleteStoreById(id);
+    }
+
+    @Override
+    public int saveStore(Store store){
+        return storeMapper.saveStore(store);
     }
 }

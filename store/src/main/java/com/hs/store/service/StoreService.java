@@ -19,5 +19,7 @@ public interface StoreService {
 
     public List<Store> likeStoreName(String comName);
 
-    public int deleteUserById(Long id);
+    public int deleteStoreById(Long id);
+
+    public int saveStore(Store store);
 }
