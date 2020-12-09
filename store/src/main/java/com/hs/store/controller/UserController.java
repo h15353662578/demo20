@@ -42,7 +42,7 @@ public class UserController {
 
     @ApiOperation("/根据账号删除用户")
     @DeleteMapping("/deleteUserByName")
-    public int deleteUserByName(@RequestBody String userName) {
+    public Integer deleteUserByName(@RequestBody String userName) {
         return userService.deleteUserByName(userName);
     }
 
@@ -54,7 +54,7 @@ public class UserController {
 
     @ApiOperation("/更新用户")
     @PostMapping("/save")
-    public int save(@RequestBody User user) {
+    public Integer save(@RequestBody User user) {
         return userService.save(user);
     }
 

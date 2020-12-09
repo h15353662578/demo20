@@ -23,9 +23,9 @@ public interface UserService  {
 
     public int addUser(User user);
 
-    public int deleteUserByName(String userName);
+    public Integer deleteUserByName(String userName);
 
-    public int save(User user);
+    public Integer save(User user);
 
-    public int deleteUserById(Long id);
+    public Integer deleteUserById(Long id);
 }

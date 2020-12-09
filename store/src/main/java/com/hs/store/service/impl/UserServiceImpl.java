@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int deleteUserByName(String userName){
+    public Integer deleteUserByName(String userName){
         return userMapper.deleteUserByName(userName);
     }
 
@@ -45,12 +45,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int save(User user){
+    public Integer save(User user){
         return userMapper.save(user);
     }
 
     @Override
-    public int deleteUserById(Long id){
+    public Integer deleteUserById(Long id){
         return userMapper.deleteUserById(id);
     }
 }

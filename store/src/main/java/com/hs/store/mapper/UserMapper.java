@@ -43,7 +43,7 @@ public interface UserMapper {
      * @return
      */
     @Delete("delete user from user where user_name=#{userName}")
-    public int deleteUserByName(String userName);
+    public Integer deleteUserByName(String userName);
 
     /***
      * 根据账号查询用户信息
@@ -59,8 +59,8 @@ public interface UserMapper {
      * @return
      */
     @Update("update user SET  name = #{name}, user_phone = #{userPhone}, user_name = #{userName},password = #{password}, user_sex = #{userSex},  user_age = #{userAge} where id = #{id}")
-    public int save(User user);
+    public Integer save(User user);
 
     @Delete("delete user from user where id=#{id}")
-    public int deleteUserById(Long id);
+    public Integer deleteUserById(Long id);
 }
